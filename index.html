@@ -11,11 +11,16 @@
 <body>
     <div class="payment_container">
         <div class="payment_main_container d-flex flex-row">
+
+            <!-- Payment Processing.... -->
             <div class="proceed_container">
                 <img src="assets/icons/loader.gif" alt="loader" style="width: 40px;">
                 <h2>Processing your payment...</h2>
                 <p class="process_transaction_id"></p>
             </div>
+
+            <!-- payment lists slides -->
+
             <div class="product_payment_container">
                 <div class="payment_container_top d-flex justify-between align-items-center">
                     <p class="back_icon d-flex align-items-center gap-14">
@@ -53,7 +58,7 @@
             <!-- Card Forms -->
             <div class="card_payment_form_container">
                 <div class="RightBarHeader">
-                    
+
                     <div class="loginDetail">
                         <div class="loginDetail_userIcon" id="loginDetail_userIcon" data-testid="user-icon">
                             <img src="assets/icons/user-icon.svg" alt="" srcset="">
@@ -135,34 +140,34 @@
                 </div>
                 <div class="payment_potions_container">
 
-                    
+
                     <div class="offers_container">
-                    <div class="offers_card">
-                        <div class="img-title d-flex gap-14">
-                            <img src="assets/icons/federal-bank.svg" alt="federal-bank" style="height: 17px;">
-                            <h3 class="bank_name">Federal Bank</h3>
+                        <div class="offers_card">
+                            <div class="img-title d-flex gap-14">
+                                <img src="assets/icons/federal-bank.svg" alt="federal-bank" style="height: 17px;">
+                                <h3 class="bank_name">Federal Bank</h3>
+                            </div>
+                            <p class="offer_txt">You will be redirected to Federal Bank's netbanking page.</p>
+                            <button class="procedd_offer_btn">Proceed</button>
                         </div>
-                        <p class="offer_txt">You will be redirected to Federal Bank's netbanking page.</p>
-                        <button class="procedd_offer_btn">Proceed</button>
-                    </div>
-                    <div class="offers_card">
-                        <div class="img-title d-flex gap-14">
-                            <img src="assets/icons/federal-bank.svg" alt="federal-bank" style="height: 17px;">
-                            <h3 class="bank_name">Federal Bank</h3>
+                        <div class="offers_card">
+                            <div class="img-title d-flex gap-14">
+                                <img src="assets/icons/federal-bank.svg" alt="federal-bank" style="height: 17px;">
+                                <h3 class="bank_name">Federal Bank</h3>
+                            </div>
+                            <p class="offer_txt">You will be redirected to Federal Bank's netbanking page.</p>
+                            <button class="procedd_offer_btn">Proceed</button>
                         </div>
-                        <p class="offer_txt">You will be redirected to Federal Bank's netbanking page.</p>
-                        <button class="procedd_offer_btn">Proceed</button>
-                    </div>
-                    <div class="offers_card">
-                        <div class="img-title d-flex gap-14">
-                            <img src="assets/icons/federal-bank.svg" alt="federal-bank" style="height: 17px;">
-                            <h3 class="bank_name">Federal Bank</h3>
+                        <div class="offers_card">
+                            <div class="img-title d-flex gap-14">
+                                <img src="assets/icons/federal-bank.svg" alt="federal-bank" style="height: 17px;">
+                                <h3 class="bank_name">Federal Bank</h3>
+                            </div>
+                            <p class="offer_txt">You will be redirected to Federal Bank's netbanking page.</p>
+                            <button class="procedd_offer_btn">Proceed</button>
                         </div>
-                        <p class="offer_txt">You will be redirected to Federal Bank's netbanking page.</p>
-                        <button class="procedd_offer_btn">Proceed</button>
                     </div>
                 </div>
-            </div>
                 <h3 id="card_debit">CARDS(CREDIT/DEBIT)</h3>
 
                 <!-- Card Form  -->
@@ -172,9 +177,9 @@
                         <form autocomplete="off" id="ccdcCardsForm">
                             <div id="cardNumberRow" class="form-row"><label id="cardNumberLabel">Card Number</label>
                                 <div class="input-box cardInput">
-                                    <input name="cardNumber" tabindex="1" id="cardNumber" data-testid="cardNumber" pattern="[0-9]*"
-                                        type="text" inputmode="numeric" placeholder="Enter Card Number" cardtype="" autocomplete="cc-number"
-                                        maxlength="23" class="text" value="">
+                                    <input name="cardNumber" tabindex="1" id="cardNumber" data-testid="cardNumber"
+                                        pattern="[0-9]*" type="text" inputmode="numeric" placeholder="Enter Card Number"
+                                        cardtype="" autocomplete="cc-number" maxlength="23" class="text" value="">
                                     <div class="payment_logo">
                                         <img src="assets/icons/visa.webp" alt="visa" class="pay_logo" id="visa">
                                         <img src="assets/icons/amexepress.png" alt="amexpress" class="pay_logo"
@@ -191,9 +196,10 @@
                                 <div class="form-blck max-wdth">
                                     <div id="expiryRow" class="form-row error"><label id="expiryLabel">Expiry</label>
                                         <div class="input-box">
-                                            <input maxlength="5" name="cardExpiry" autocomplete="cc-exp" pattern="[0-9]*" inputmode="numeric" tabindex="2"
-                                                id="cardExpiry" data-testid="cardExpiry" type="tel" class="text"
-                                                placeholder="MM/YY" value="">
+                                            <input maxlength="5" name="cardExpiry" autocomplete="cc-exp"
+                                                pattern="[0-9]*" inputmode="numeric" tabindex="2" id="cardExpiry"
+                                                data-testid="cardExpiry" type="tel" class="text" placeholder="MM/YY"
+                                                value="">
                                         </div>
                                     </div>
                                     <span class="error-msg" id="cardExpiryError">Expiry is required</span>
@@ -213,10 +219,11 @@
                                             </span>
                                         </label>
                                         <div class="input-box cvv-input">
-                                            <input pattern="\d*" name="cardCvv" pattern="[0-9]*" tabindex="3" id="cardCvv" type="tel"
-                                                class="text numeric-passowrd" placeholder="Enter CVV" maxlength="3"
-                                                inputmode="numeric" data-testid="cardCvv" aria-label="cvv-value"
-                                                autocomplete="cc-csc" value="">
+                                            <input pattern="\d*" name="cardCvv" pattern="[0-9]*" tabindex="3"
+                                                id="cardCvv" type="tel" class="text numeric-passowrd"
+                                                placeholder="Enter CVV" maxlength="3" inputmode="numeric"
+                                                data-testid="cardCvv" aria-label="cvv-value" autocomplete="cc-csc"
+                                                value="">
                                         </div>
                                         <span class="error-msg" id="cardCvvError" data-testid="">CVV is required</span>
                                     </div>
@@ -253,6 +260,7 @@
         </div>
     </div>
 
+    <!-- Modal for learn more -->
     <div class="modal" id="modal">
         <div class="modal-content">
             <dev class="ecomm__header d-flex justify-between" style="padding-bottom: 20px;">
@@ -398,6 +406,7 @@
         </div>
     </div>
 </body>
+<!-- include script file here -->
 <script src="assets/js/script.js"></script>
 
 </html>
