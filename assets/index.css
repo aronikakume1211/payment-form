@@ -756,6 +756,12 @@ body {
 .offers_container {
   overflow-x: scroll;
   display: flex;
+  width: 450px;
+}
+@media screen and (max-width: 567px) {
+  .offers_container {
+    width: 400px;
+  }
 }
 .offers_container::-webkit-scrollbar {
   display: none;
