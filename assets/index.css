@@ -46,7 +46,7 @@ body {
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 0px;
-  height: 779px;
+  height: 90vh;
 }
 @media screen and (max-width: 768px) {
   .payment_main_container {
@@ -55,6 +55,8 @@ body {
     border-left: none;
     padding: 0;
     margin: 0;
+    height: auto;
+    padding-bottom: 150px;
   }
 }
 
@@ -216,13 +218,14 @@ body {
 }
 
 .card_payment_form_container {
-  height: 779px;
+  height: 90vh;
   flex-grow: 1;
   width: 467px;
 }
 @media screen and (max-width: 768px) {
   .card_payment_form_container {
     width: 100%;
+    height: auto;
   }
 }
 
@@ -377,6 +380,11 @@ body {
   background-color: #f4f4f4;
 }
 
+.card_payment_form_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .card_payment_form_container h3 {
   font-size: 11px;
   color: #8e8e8e;
@@ -548,7 +556,8 @@ body {
   margin: 0;
 }
 
-.modal {
+.modal,
+.cancel_payment_modal {
   display: none;
   position: fixed;
   left: 0;
@@ -736,6 +745,18 @@ body {
   align-items: center;
   flex-direction: column;
 }
+.proceed_container.process_payment .loader {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #2e2e2e;
+}
+.proceed_container.process_payment .process_transaction_id {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #2e2e2e;
+}
 
 .payment_potions_container {
   overflow-x: scroll;
@@ -828,4 +849,191 @@ body {
   text-transform: uppercase;
   margin-top: 10px;
   cursor: pointer;
+}
+
+.consent_stattment,
+.mobile_consent_stattment {
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
+  color: #2e2e2e;
+  padding: 0px 5px;
+  gap: 5px;
+}
+.consent_stattment a,
+.mobile_consent_stattment a {
+  text-decoration: none;
+  color: #10846d;
+}
+
+@media screen and (max-width: 768px) {
+  .consent_stattment {
+    display: none;
+  }
+}
+
+.mobile_consent_stattment {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .mobile_consent_stattment {
+    display: flex;
+  }
+}
+
+.privecy_policy_container {
+  max-width: 825px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .privecy_policy_container {
+    flex-direction: column;
+    background-color: #f4f4f4;
+    padding: 10px;
+  }
+}
+.privecy_policy_container .footer_left {
+  max-width: 350px;
+  gap: 10px;
+}
+@media screen and (max-width: 768px) {
+  .privecy_policy_container .footer_left {
+    max-width: 100%;
+  }
+}
+.privecy_policy_container .footer_left img {
+  width: 50px;
+  height: 50px;
+}
+.privecy_policy_container .footer_left p {
+  font-size: 11px;
+  line-height: 16px;
+  display: inline-block;
+  letter-spacing: -0.34px;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+.privecy_policy_container .footer_left p a {
+  text-decoration: none;
+  color: #10846d;
+}
+.privecy_policy_container .footer_right ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  list-style: none;
+}
+.privecy_policy_container .footer_right ul li {
+  width: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer_container {
+    position: fixed !important;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #FFFFFF;
+  }
+}
+
+.cancel_payment_modal {
+  justify-content: center;
+  align-items: baseline;
+}
+@media screen and (max-width: 768px) {
+  .cancel_payment_modal {
+    align-items: center;
+    padding: 0;
+  }
+}
+.cancel_payment_modal .cancel_payment_container {
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 20px;
+}
+@media screen and (min-width: 768px) {
+  .cancel_payment_modal .cancel_payment_container {
+    min-width: 450px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cancel_payment_modal .cancel_payment_container {
+    width: 80%;
+  }
+}
+
+.cancle_title {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+.confirmation_txt {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 300;
+  padding: 0;
+}
+
+.cancel_btns .no {
+  background: #10846d;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: all 400ms ease-in-out;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  padding: 10px 70px;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .cancel_btns .no {
+    padding: 10px 60px;
+  }
+}
+.cancel_btns .yes {
+  background: inherit;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: all 400ms ease-in-out;
+  color: #10846d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  padding: 10px 40px;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .cancel_btns .yes {
+    padding: 10px 10px;
+  }
+}
+.cancel_btns .yes:hover {
+  background: rgb(239, 239, 239);
 }/*# sourceMappingURL=index.css.map */

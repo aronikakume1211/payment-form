@@ -14,8 +14,9 @@ body {
     margin: 0 auto;
     margin-top: 10px;
     margin-bottom: 0px;
-    height: 779px;
-    
+    // height: 779px;
+    height: 90vh;
+
 
     @media screen and (max-width: 768px) {
         flex-direction: column;
@@ -23,6 +24,8 @@ body {
         border-left: none;
         padding: 0;
         margin: 0;
+        height: auto;
+        padding-bottom: 150px;
     }
 }
 
@@ -197,11 +200,14 @@ body {
 
 // Payment form
 .card_payment_form_container {
-    height: 779px;
+    // height: 779px;
+    height: 90vh;
     flex-grow: 1;
     width: 467px;
+
     @media screen and (max-width: 768px) {
         width: 100%;
+        height: auto;
     }
 }
 
@@ -333,13 +339,15 @@ body {
             }
 
         }
-        
+
     }
 }
-.custom-radio input:checked{
+
+.custom-radio input:checked {
     background-color: rgba(0, 0, 0, 0);
     border: #0091ff solid 1px;
 }
+
 // .checkmark.marked{
 //     &::after{
 
@@ -378,6 +386,10 @@ body {
 }
 
 .card_payment_form_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     h3 {
         font-size: 11px;
         color: $text-color-primary;
@@ -430,15 +442,18 @@ body {
             &::placeholder {
                 color: #2e2e2e;
                 opacity: 0.4;
+
                 @media screen and (max-width: 768px) {
                     font-size: 14px;
                 }
+
                 /* Firefox */
             }
 
             &::-ms-input-placeholder {
                 color: #2e2e2e;
                 opacity: 0.4;
+
                 @media screen and (max-width: 768px) {
                     font-size: 14px;
                 }
@@ -477,11 +492,13 @@ body {
 
 .input-box.cvv-input {
     max-width: 150px;
+
     @media screen and (max-width: 768px) {
         max-width: 100%;
     }
 }
-.cvv-expiry{
+
+.cvv-expiry {
     gap: 30px;
 }
 
@@ -548,7 +565,8 @@ body {
     }
 }
 
-.modal {
+.modal,
+.cancel_payment_modal {
     display: none;
     position: fixed;
     left: 0;
@@ -709,10 +727,12 @@ body {
         position: absolute;
     }
 }
-.cardInput{
+
+.cardInput {
     position: relative;
 }
-.payment_logo{
+
+.payment_logo {
     position: absolute;
     right: 5px;
     height: 30px;
@@ -720,21 +740,25 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
-    img{
+
+    img {
         width: 40px;
     }
-    .pay_logo{
+
+    .pay_logo {
         display: none;
     }
-    .pay_logo.show{
+
+    .pay_logo.show {
         display: block;
     }
 }
 
-.proceed_container{
+.proceed_container {
     display: none;
 }
-.proceed_container.process_payment{
+
+.proceed_container.process_payment {
     position: absolute;
     z-index: 9999;
     background-color: #FFFFFF;
@@ -746,16 +770,30 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    .loader {
+        font-family: "Inter", sans-serif;
+        font-size: 20px;
+        line-height: 32px;
+        font-weight: 400;
+        color: $text-default;
+    }
+
+    .process_transaction_id {
+        font-family: "Inter", sans-serif;
+        font-weight: 400;
+        color: $text-default;
+    }
 }
 
 // Offers card
-.payment_potions_container{
+.payment_potions_container {
     overflow-x: scroll;
 
-   
+
 
     &::-webkit-scrollbar {
-       display: none;
+        display: none;
     }
 
     &::-webkit-scrollbar-track {
@@ -771,30 +809,34 @@ body {
     }
 
 }
-.offers_container{
+
+.offers_container {
     overflow-x: scroll;
     display: flex;
     width: 450px;
+
     @media screen and (max-width: 567px) {
         width: 400px;
     }
+
     &::-webkit-scrollbar {
         display: none;
-     }
- 
-     &::-webkit-scrollbar-track {
-         display: none;
-     }
- 
-     &::-webkit-scrollbar-thumb {
-         display: none;
-     }
- 
-     &::-webkit-scrollbar-thumb:hover {
-         display: none;
-     }
+    }
+
+    &::-webkit-scrollbar-track {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        display: none;
+    }
 }
-.offers_card{
+
+.offers_card {
     padding: 10px;
     // max-width: 277px;
     // width: 277px;
@@ -807,8 +849,9 @@ body {
     width: 280px;
     min-width: 290px;
 }
-.img-title{
-    .bank_name{
+
+.img-title {
+    .bank_name {
         margin: 0;
         padding: 0;
         font-family: 'Inter', sans-serif;
@@ -820,7 +863,8 @@ body {
         text-transform: capitalize;
     }
 }
-.offer_txt{
+
+.offer_txt {
     font-size: 10px;
     line-height: 19px;
     font-weight: 400;
@@ -829,7 +873,8 @@ body {
     padding: 0;
     margin: 0;
 }
-.procedd_offer_btn{
+
+.procedd_offer_btn {
     background: #ffffff;
     border: 1px solid #10846d;
     color: #10846d;
@@ -848,4 +893,198 @@ body {
     text-transform: uppercase;
     margin-top: 10px;
     cursor: pointer;
+}
+
+
+// Concent Statement 
+.consent_stattment,
+.mobile_consent_stattment {
+    font-family: "Inter", sans-serif;
+    font-style: italic;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 400;
+    color: $text-default;
+    padding: 0px 5px;
+    gap: 5px;
+
+    a {
+        text-decoration: none;
+        color: #10846d;
+    }
+}
+
+.consent_stattment {
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.mobile_consent_stattment {
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        display: flex;
+    }
+}
+
+.privecy_policy_container {
+    max-width: 825px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        background-color: #f4f4f4;
+        padding: 10px;
+    }
+
+
+    .footer_left {
+        max-width: 350px;
+        gap: 10px;
+
+        @media screen and (max-width: 768px) {
+            max-width: 100%;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+        p {
+            font-size: 11px;
+            line-height: 16px;
+            display: inline-block;
+            letter-spacing: -0.34px;
+            text-align: left;
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+
+            a {
+                text-decoration: none;
+                color: #10846d;
+            }
+        }
+    }
+
+    .footer_right {
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            list-style: none;
+
+            li {
+                width: 32px;
+            }
+        }
+    }
+}
+
+.footer_container {
+    @media screen and (max-width: 768px) {
+        position: fixed !important;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: #FFFFFF;
+
+    }
+}
+
+
+// Cancel Payment Modal
+.cancel_payment_modal {
+    justify-content: center;
+    align-items: baseline;
+    @media screen and (max-width: 768px) {
+      align-items: center;
+      padding: 0;
+
+    }
+
+    .cancel_payment_container {
+        background-color: #ffffff;
+        border-radius: 5px;
+        // height: 123px;
+        padding: 20px;
+        @media screen and (min-width: 768px) {
+            min-width: 450px;
+        }
+        @media screen and (max-width: 768px) {
+            width: 80%;
+
+        }
+    }
+}
+
+.cancle_title {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+.confirmation_txt {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 300;
+    padding: 0;
+}
+
+.cancel_btns {
+    .no {
+        background: #10846d;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        line-height: 40px;
+        height: 40px;
+        font-size: 14px;
+        text-transform: uppercase;
+        transition: all 400ms ease-in-out;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Inter", sans-serif;
+        font-weight: normal;
+        padding: 10px 70px;
+        @media screen and (max-width: 768px) {
+            padding: 10px 60px;
+        }
+        cursor: pointer;
+    }
+    .yes{
+        background: inherit;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        line-height: 40px;
+        height: 40px;
+        font-size: 14px;
+        text-transform: uppercase;
+        transition: all 400ms ease-in-out;
+        color: #10846d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Inter", sans-serif;
+        font-weight: normal;
+        padding: 10px 40px;  
+        cursor: pointer; 
+        @media screen and (max-width: 768px) {
+            padding: 10px 10px;
+        }
+        &:hover{
+            background: rgb(239,239,239);
+        }
+    }
 }

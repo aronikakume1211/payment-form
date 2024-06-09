@@ -29,6 +29,25 @@ close_modal.addEventListener('click', () => {
 })
 
 
+// close cancel popup
+let close_cancel_modal = document.querySelector('.close_cancel_modal');
+let no_btn = document.getElementById('no');
+let back_icon = document.querySelector('.back_icon');
+let cancel_payment_modal = document.querySelector('.cancel_payment_modal');
+
+back_icon.addEventListener('click', () =>{
+    cancel_payment_modal.style.display = "flex";
+});
+
+no_btn.addEventListener('click', ()=>{
+    cancel_payment_modal.style.display = "none";
+})
+
+close_cancel_modal.addEventListener('click', ()=>{
+    cancel_payment_modal.style.display = "none";
+})
+
+
 // tooltip-img
 let tooltip_img = document.querySelector('.tooltip-img');
 let cvv_note_box = document.querySelector('.cvv-note-box');

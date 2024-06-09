@@ -15,8 +15,22 @@
             <!-- Payment Processing.... -->
             <div class="proceed_container">
                 <img src="assets/icons/loader.gif" alt="loader" style="width: 40px;">
-                <h2>Processing your payment...</h2>
+                <h2 class="loader">Processing your payment...</h2>
                 <p class="process_transaction_id"></p>
+            </div>
+
+            <!-- Cancel Payment Popup -->
+            <div class="cancel_payment_modal">
+                <div class="cancel_payment_container">
+                    <p class="cancle_title d-flex justify-between"><span>Cancel Payment</span>
+                        <img src="assets/icons/close.svg" alt="close cancel modal" class="close_cancel_modal" style="cursor: pointer;"></p>
+                    <p class="confirmation_txt">Are you sure you want to cancel the transaction?</p>
+                    <div class="cancel_btns d-flex justify-between">
+                        <button class="yes" id="yes">Yes,Cancel</button>
+                        <button class="no" id="no">No</button>
+                    </div>
+                   
+                </div>
             </div>
 
             <!-- payment lists slides -->
@@ -57,206 +71,254 @@
 
             <!-- Card Forms -->
             <div class="card_payment_form_container">
-                <div class="RightBarHeader">
+                <div>
+                    <div class="RightBarHeader">
 
-                    <div class="loginDetail">
-                        <div class="loginDetail_userIcon" id="loginDetail_userIcon" data-testid="user-icon">
-                            <img src="assets/icons/user-icon.svg" alt="" srcset="">
-                            <i class="arrowIcon rotateDownIcon"><svg width="9" height="6" viewBox="0 0 9 6" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0.741211 0L4.5614 3.33333L8.38147 0H0.741211Z" fill="#2E2E2E"></path>
-                                </svg>
-                            </i>
-                        </div>
-                        <div class="loginDetail_DdBox" id="loginDetail_DdBox">
-                            <h5 class="loginDetail_title"><span id="english">English</span></h5>
-                            <ul class="loginDetail_listing">
-                                <li class="select_language d-flex align-items-center">
-                                    <i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
-                                            viewBox="0 0 20 21" fill="none">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M9.92613 7.17725H17.7589C18.9947 7.17725 20 8.17551 20 9.40257V17.1802C20 18.4074 18.9947 19.4056 17.7589 19.4056H9.92613C8.80282 19.4056 7.86987 18.5807 7.70942 17.5089L5.65557 16.0522C5.49545 15.9388 5.40039 15.7553 5.40039 15.5598C5.40039 15.3644 5.49545 15.181 5.65557 15.0676L7.68498 13.6282V9.40257C7.68498 8.17551 8.69033 7.17725 9.92613 7.17725ZM14.8388 15.5118C14.8713 15.635 14.9822 15.6802 15.1259 15.6802C15.3544 15.6802 15.6611 15.5311 15.6611 15.3303C15.6611 15.3149 15.6571 15.2996 15.6522 15.281C15.6509 15.2761 15.6495 15.2709 15.6481 15.2654L14.3883 11.1885C14.3295 10.9941 14.088 10.9032 13.8399 10.9032C13.5984 10.9032 13.3569 10.9941 13.2981 11.1885L12.0383 15.2654L12.0377 15.2677C12.0314 15.2929 12.0252 15.3177 12.0252 15.3303C12.0252 15.5377 12.332 15.6802 12.5605 15.6802C12.7041 15.6802 12.8151 15.635 12.8477 15.5118L13.0957 14.6496H14.5906L14.8388 15.5118Z"
-                                                fill="#2E2E2E"></path>
-                                            <path d="M13.2715 13.9912H14.4074L13.8393 12.0015L13.2715 13.9912Z"
-                                                fill="#2E2E2E"></path>
-                                            <path
-                                                d="M1.61933 2.45747C2.31494 2.10659 3.0196 1.93115 3.73328 1.93115C4.20304 1.93115 4.60731 2.01437 4.94608 2.18082C5.28485 2.34726 5.53781 2.57443 5.70493 2.86234C5.87658 3.14574 5.9624 3.46738 5.9624 3.82726C5.9624 4.19164 5.87884 4.52002 5.71171 4.81243C5.54458 5.10033 5.29389 5.341 4.95963 5.53444C5.20355 5.78635 5.5762 5.9123 6.07758 5.9123C6.40281 5.9123 6.7077 5.86057 6.99227 5.75711C7.28135 5.64915 7.56367 5.47595 7.8392 5.23753V3.05802H6.82288V2.07285H10.4003V3.05802H8.95716V7.49189L7.8392 10.6694V6.47912C7.35137 6.71303 6.72577 6.83 5.9624 6.83H5.90142C6.04144 7.1134 6.11146 7.38781 6.11146 7.65322C6.11146 8.07607 6.01209 8.43371 5.81334 8.72611C5.61911 9.01401 5.35713 9.22768 5.02739 9.36714C4.70216 9.50209 4.33403 9.56957 3.92299 9.56957C3.38095 9.56957 2.88635 9.43911 2.43916 9.1782C1.99198 8.91729 1.56965 8.51018 1.17216 7.95687C0.779177 7.39905 0.388459 6.6613 0 5.74362L0.975662 5.39273C1.41381 6.46787 1.86551 7.2641 2.33075 7.78143C2.79601 8.29425 3.29513 8.55067 3.82814 8.55067C4.20304 8.55067 4.49439 8.46519 4.70216 8.29425C4.90995 8.12331 5.01384 7.87139 5.01384 7.53851C5.01384 7.24161 4.93253 6.95821 4.76992 6.6883C4.60731 6.41839 4.34984 6.14848 3.99752 5.87857C3.75361 5.92355 3.4871 5.95055 3.19801 5.95954L3.13703 4.98787C3.70617 4.97438 4.13755 4.87541 4.43115 4.69097C4.72475 4.50653 4.87155 4.22313 4.87155 3.84076C4.87155 3.62483 4.81961 3.44714 4.71572 3.30769C4.61634 3.16823 4.48535 3.06702 4.32274 3.00404C4.16013 2.94106 3.98171 2.90957 3.78748 2.90957C3.49388 2.90957 3.21383 2.94556 2.94732 3.01754C2.68082 3.08951 2.3556 3.22222 1.97165 3.41565L1.61933 2.45747Z"
-                                                fill="#2E2E2E"></path>
-                                        </svg></i> <span id="language">Change language</span>
-                                    <img src="assets/icons/accordion-arrow.svg" alt="" class="loginDetail_accrdn-arrw">
+                        <div class="loginDetail">
+                            <div class="loginDetail_userIcon" id="loginDetail_userIcon" data-testid="user-icon">
+                                <img src="assets/icons/user-icon.svg" alt="" srcset="">
+                                <i class="arrowIcon rotateDownIcon"><svg width="9" height="6" viewBox="0 0 9 6"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.741211 0L4.5614 3.33333L8.38147 0H0.741211Z" fill="#2E2E2E"></path>
+                                    </svg>
+                                </i>
+                            </div>
+                            <div class="loginDetail_DdBox" id="loginDetail_DdBox">
+                                <h5 class="loginDetail_title"><span id="english">English</span></h5>
+                                <ul class="loginDetail_listing">
+                                    <li class="select_language d-flex align-items-center">
+                                        <i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+                                                viewBox="0 0 20 21" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M9.92613 7.17725H17.7589C18.9947 7.17725 20 8.17551 20 9.40257V17.1802C20 18.4074 18.9947 19.4056 17.7589 19.4056H9.92613C8.80282 19.4056 7.86987 18.5807 7.70942 17.5089L5.65557 16.0522C5.49545 15.9388 5.40039 15.7553 5.40039 15.5598C5.40039 15.3644 5.49545 15.181 5.65557 15.0676L7.68498 13.6282V9.40257C7.68498 8.17551 8.69033 7.17725 9.92613 7.17725ZM14.8388 15.5118C14.8713 15.635 14.9822 15.6802 15.1259 15.6802C15.3544 15.6802 15.6611 15.5311 15.6611 15.3303C15.6611 15.3149 15.6571 15.2996 15.6522 15.281C15.6509 15.2761 15.6495 15.2709 15.6481 15.2654L14.3883 11.1885C14.3295 10.9941 14.088 10.9032 13.8399 10.9032C13.5984 10.9032 13.3569 10.9941 13.2981 11.1885L12.0383 15.2654L12.0377 15.2677C12.0314 15.2929 12.0252 15.3177 12.0252 15.3303C12.0252 15.5377 12.332 15.6802 12.5605 15.6802C12.7041 15.6802 12.8151 15.635 12.8477 15.5118L13.0957 14.6496H14.5906L14.8388 15.5118Z"
+                                                    fill="#2E2E2E"></path>
+                                                <path d="M13.2715 13.9912H14.4074L13.8393 12.0015L13.2715 13.9912Z"
+                                                    fill="#2E2E2E"></path>
+                                                <path
+                                                    d="M1.61933 2.45747C2.31494 2.10659 3.0196 1.93115 3.73328 1.93115C4.20304 1.93115 4.60731 2.01437 4.94608 2.18082C5.28485 2.34726 5.53781 2.57443 5.70493 2.86234C5.87658 3.14574 5.9624 3.46738 5.9624 3.82726C5.9624 4.19164 5.87884 4.52002 5.71171 4.81243C5.54458 5.10033 5.29389 5.341 4.95963 5.53444C5.20355 5.78635 5.5762 5.9123 6.07758 5.9123C6.40281 5.9123 6.7077 5.86057 6.99227 5.75711C7.28135 5.64915 7.56367 5.47595 7.8392 5.23753V3.05802H6.82288V2.07285H10.4003V3.05802H8.95716V7.49189L7.8392 10.6694V6.47912C7.35137 6.71303 6.72577 6.83 5.9624 6.83H5.90142C6.04144 7.1134 6.11146 7.38781 6.11146 7.65322C6.11146 8.07607 6.01209 8.43371 5.81334 8.72611C5.61911 9.01401 5.35713 9.22768 5.02739 9.36714C4.70216 9.50209 4.33403 9.56957 3.92299 9.56957C3.38095 9.56957 2.88635 9.43911 2.43916 9.1782C1.99198 8.91729 1.56965 8.51018 1.17216 7.95687C0.779177 7.39905 0.388459 6.6613 0 5.74362L0.975662 5.39273C1.41381 6.46787 1.86551 7.2641 2.33075 7.78143C2.79601 8.29425 3.29513 8.55067 3.82814 8.55067C4.20304 8.55067 4.49439 8.46519 4.70216 8.29425C4.90995 8.12331 5.01384 7.87139 5.01384 7.53851C5.01384 7.24161 4.93253 6.95821 4.76992 6.6883C4.60731 6.41839 4.34984 6.14848 3.99752 5.87857C3.75361 5.92355 3.4871 5.95055 3.19801 5.95954L3.13703 4.98787C3.70617 4.97438 4.13755 4.87541 4.43115 4.69097C4.72475 4.50653 4.87155 4.22313 4.87155 3.84076C4.87155 3.62483 4.81961 3.44714 4.71572 3.30769C4.61634 3.16823 4.48535 3.06702 4.32274 3.00404C4.16013 2.94106 3.98171 2.90957 3.78748 2.90957C3.49388 2.90957 3.21383 2.94556 2.94732 3.01754C2.68082 3.08951 2.3556 3.22222 1.97165 3.41565L1.61933 2.45747Z"
+                                                    fill="#2E2E2E"></path>
+                                            </svg></i> <span id="language">Change language</span>
+                                        <img src="assets/icons/accordion-arrow.svg" alt=""
+                                            class="loginDetail_accrdn-arrw">
 
 
-                                    <ul class="subDropdown">
-                                        <div>
-                                            <li>
-                                                <label class="custom-radio">
-                                                    <input type="radio" name="radio" value="English" checked="">
-                                                    <span class="checkmark"></span>English
-                                                </label>
-                                            </li>
-                                        </div>
-                                        <div>
-                                            <li><label class="custom-radio">
-                                                    <input type="radio" name="radio" value="हिंदी"><span
-                                                        class="checkmark"></span>हिंदी</label>
-                                            </li>
-                                        </div>
-                                        <div>
-                                            <li><label class="custom-radio"><input type="radio" name="radio"
-                                                        value="ગુજરાતી"><span class="checkmark"></span>ગુજરાતી</label>
-                                            </li>
-                                        </div>
-                                        <div>
-                                            <li><label class="custom-radio"><input type="radio" name="radio"
-                                                        value="मराठी"><span class="checkmark"></span>मराठी</label></li>
-                                        </div>
-                                        <div>
-                                            <li><label class="custom-radio"><input type="radio" name="radio"
-                                                        value="తెలుగు"><span class="checkmark"></span>తెలుగు</label>
-                                            </li>
-                                        </div>
-                                        <div>
-                                            <li><label class="custom-radio"><input type="radio" name="radio"
-                                                        value="தமிழ்"><span class="checkmark"></span>தமிழ்</label></li>
-                                        </div>
-                                        <div>
-                                            <li>
-                                                <label class="custom-radio"><input type="radio" name="radio"
-                                                        value="ಕನ್ನಡ">
-                                                    <span class="checkmark"></span>
-                                                    ಕನ್ನಡ
-                                                </label>
-                                            </li>
-                                        </div>
-                                        <div>
-                                            <li><label class="custom-radio"><input type="radio" name="radio"
-                                                        value="বাংলা"><span class="checkmark"></span>বাংলা</label></li>
-                                        </div>
-                                    </ul>
-                                </li>
-                            </ul>
+                                        <ul class="subDropdown">
+                                            <div>
+                                                <li>
+                                                    <label class="custom-radio">
+                                                        <input type="radio" name="radio" value="English" checked="">
+                                                        <span class="checkmark"></span>English
+                                                    </label>
+                                                </li>
+                                            </div>
+                                            <div>
+                                                <li><label class="custom-radio">
+                                                        <input type="radio" name="radio" value="हिंदी"><span
+                                                            class="checkmark"></span>हिंदी</label>
+                                                </li>
+                                            </div>
+                                            <div>
+                                                <li><label class="custom-radio"><input type="radio" name="radio"
+                                                            value="ગુજરાતી"><span
+                                                            class="checkmark"></span>ગુજરાતી</label>
+                                                </li>
+                                            </div>
+                                            <div>
+                                                <li><label class="custom-radio"><input type="radio" name="radio"
+                                                            value="मराठी"><span class="checkmark"></span>मराठी</label>
+                                                </li>
+                                            </div>
+                                            <div>
+                                                <li><label class="custom-radio"><input type="radio" name="radio"
+                                                            value="తెలుగు"><span class="checkmark"></span>తెలుగు</label>
+                                                </li>
+                                            </div>
+                                            <div>
+                                                <li><label class="custom-radio"><input type="radio" name="radio"
+                                                            value="தமிழ்"><span class="checkmark"></span>தமிழ்</label>
+                                                </li>
+                                            </div>
+                                            <div>
+                                                <li>
+                                                    <label class="custom-radio"><input type="radio" name="radio"
+                                                            value="ಕನ್ನಡ">
+                                                        <span class="checkmark"></span>
+                                                        ಕನ್ನಡ
+                                                    </label>
+                                                </li>
+                                            </div>
+                                            <div>
+                                                <li><label class="custom-radio"><input type="radio" name="radio"
+                                                            value="বাংলা"><span class="checkmark"></span>বাংলা</label>
+                                                </li>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="payment_potions_container">
-
-
-                    <div class="offers_container">
-                        <div class="offers_card">
-                            <div class="img-title d-flex gap-14">
-                                <img src="assets/icons/federal-bank.svg" alt="federal-bank" style="height: 17px;">
-                                <h3 class="bank_name">Federal Bank</h3>
+                    <h3 id="card_debit">CARDS(CREDIT/DEBIT)</h3>
+                    <div class="payment_potions_container">
+                        <div class="offers_container">
+                            <div class="offers_card">
+                                <div class="img-title d-flex gap-14">
+                                    <img src="assets/icons/federal-bank.svg" alt="federal-bank" style="height: 17px;">
+                                    <h3 class="bank_name">Federal Bank</h3>
+                                </div>
+                                <p class="offer_txt">You will be redirected to Federal Bank's netbanking page.</p>
+                                <button class="procedd_offer_btn">Proceed</button>
                             </div>
-                            <p class="offer_txt">You will be redirected to Federal Bank's netbanking page.</p>
-                            <button class="procedd_offer_btn">Proceed</button>
-                        </div>
-                        <div class="offers_card">
-                            <div class="img-title d-flex gap-14">
-                                <img src="assets/icons/federal-bank.svg" alt="federal-bank" style="height: 17px;">
-                                <h3 class="bank_name">Federal Bank</h3>
+                            <div class="offers_card">
+                                <div class="img-title d-flex gap-14">
+                                    <img src="assets/icons/federal-bank.svg" alt="federal-bank" style="height: 17px;">
+                                    <h3 class="bank_name">Federal Bank</h3>
+                                </div>
+                                <p class="offer_txt">You will be redirected to Federal Bank's netbanking page.</p>
+                                <button class="procedd_offer_btn">Proceed</button>
                             </div>
-                            <p class="offer_txt">You will be redirected to Federal Bank's netbanking page.</p>
-                            <button class="procedd_offer_btn">Proceed</button>
-                        </div>
-                        <div class="offers_card">
-                            <div class="img-title d-flex gap-14">
-                                <img src="assets/icons/federal-bank.svg" alt="federal-bank" style="height: 17px;">
-                                <h3 class="bank_name">Federal Bank</h3>
+                            <div class="offers_card">
+                                <div class="img-title d-flex gap-14">
+                                    <img src="assets/icons/federal-bank.svg" alt="federal-bank" style="height: 17px;">
+                                    <h3 class="bank_name">Federal Bank</h3>
+                                </div>
+                                <p class="offer_txt">You will be redirected to Federal Bank's netbanking page.</p>
+                                <button class="procedd_offer_btn">Proceed</button>
                             </div>
-                            <p class="offer_txt">You will be redirected to Federal Bank's netbanking page.</p>
-                            <button class="procedd_offer_btn">Proceed</button>
                         </div>
                     </div>
-                </div>
-                <h3 id="card_debit">CARDS(CREDIT/DEBIT)</h3>
 
-                <!-- Card Form  -->
-                <div class="cardform_container">
-                    <div class="form">
+                    <!-- Card Form  -->
+                    <div class="cardform_container">
+                        <div class="form">
 
-                        <form autocomplete="off" id="ccdcCardsForm">
-                            <div id="cardNumberRow" class="form-row"><label id="cardNumberLabel">Card Number</label>
-                                <div class="input-box cardInput">
-                                    <input name="cardNumber" tabindex="1" id="cardNumber" data-testid="cardNumber"
-                                        pattern="[0-9]*" type="text" inputmode="numeric" placeholder="Enter Card Number"
-                                        cardtype="" autocomplete="cc-number" maxlength="23" class="text" value="">
-                                    <div class="payment_logo">
-                                        <img src="assets/icons/visa.webp" alt="visa" class="pay_logo" id="visa">
-                                        <img src="assets/icons/amexepress.png" alt="amexpress" class="pay_logo"
-                                            id="amexpress">
-                                        <img src="assets/icons/master.png" alt="master" class="pay_logo" id="master">
-                                        <img src="assets/icons/RuPay.png" alt="rupay" class="pay_logo" id="rupay">
-                                    </div>
-                                </div>
-                                <span class="error-msg" id="cardNumberError">Card Number is required</span>
-                            </div>
-
-                            <!-- Expiry -->
-                            <span class="d-flex gap-50 cvv-expiry" style="margin: 25px 0px;">
-                                <div class="form-blck max-wdth">
-                                    <div id="expiryRow" class="form-row error"><label id="expiryLabel">Expiry</label>
-                                        <div class="input-box">
-                                            <input maxlength="5" name="cardExpiry" autocomplete="cc-exp"
-                                                pattern="[0-9]*" inputmode="numeric" tabindex="2" id="cardExpiry"
-                                                data-testid="cardExpiry" type="tel" class="text" placeholder="MM/YY"
-                                                value="">
+                            <form autocomplete="off" id="ccdcCardsForm">
+                                <div id="cardNumberRow" class="form-row"><label id="cardNumberLabel">Card Number</label>
+                                    <div class="input-box cardInput">
+                                        <input name="cardNumber" tabindex="1" id="cardNumber" data-testid="cardNumber"
+                                            pattern="[0-9]*" type="text" inputmode="numeric"
+                                            placeholder="Enter Card Number" cardtype="" autocomplete="cc-number"
+                                            maxlength="23" class="text" value="">
+                                        <div class="payment_logo">
+                                            <img src="assets/icons/visa.webp" alt="visa" class="pay_logo" id="visa">
+                                            <img src="assets/icons/amexepress.png" alt="amexpress" class="pay_logo"
+                                                id="amexpress">
+                                            <img src="assets/icons/master.png" alt="master" class="pay_logo"
+                                                id="master">
+                                            <img src="assets/icons/RuPay.png" alt="rupay" class="pay_logo" id="rupay">
                                         </div>
                                     </div>
-                                    <span class="error-msg" id="cardExpiryError">Expiry is required</span>
+                                    <span class="error-msg" id="cardNumberError">Card Number is required</span>
                                 </div>
-                                <div class="form-blck">
-                                    <div id="cvvRow" class="form-row">
-                                        <label id="cvvLabel">CVV
-                                            <span class="help-icon" data-testid="toggleToolTip">
-                                                <img src="assets/icons/tooltip.svg" alt="tooltip"
-                                                    class="tooltip tooltip-img">
-                                                <span class="slow-notf cvv-note-box" style="display: none; gap: 5px;">
-                                                    <img src="assets/icons/cvv-card.svg" class="card-back-cvv" />
-                                                    <span class="display-flex">CVV is the 3
-                                                        digit number on the back of
-                                                        your card</span>
+
+                                <!-- Expiry -->
+                                <span class="d-flex gap-50 cvv-expiry" style="margin: 25px 0px;">
+                                    <div class="form-blck max-wdth">
+                                        <div id="expiryRow" class="form-row error"><label
+                                                id="expiryLabel">Expiry</label>
+                                            <div class="input-box">
+                                                <input maxlength="5" name="cardExpiry" autocomplete="cc-exp"
+                                                    pattern="[0-9]*" inputmode="numeric" tabindex="2" id="cardExpiry"
+                                                    data-testid="cardExpiry" type="tel" class="text" placeholder="MM/YY"
+                                                    value="">
+                                            </div>
+                                        </div>
+                                        <span class="error-msg" id="cardExpiryError">Expiry is required</span>
+                                    </div>
+                                    <div class="form-blck">
+                                        <div id="cvvRow" class="form-row">
+                                            <label id="cvvLabel">CVV
+                                                <span class="help-icon" data-testid="toggleToolTip">
+                                                    <img src="assets/icons/tooltip.svg" alt="tooltip"
+                                                        class="tooltip tooltip-img">
+                                                    <span class="slow-notf cvv-note-box"
+                                                        style="display: none; gap: 5px;">
+                                                        <img src="assets/icons/cvv-card.svg" class="card-back-cvv" />
+                                                        <span class="display-flex">CVV is the 3
+                                                            digit number on the back of
+                                                            your card</span>
+                                                    </span>
                                                 </span>
-                                            </span>
-                                        </label>
-                                        <div class="input-box cvv-input">
-                                            <input pattern="\d*" name="cardCvv" pattern="[0-9]*" tabindex="3"
-                                                id="cardCvv" type="tel" class="text numeric-passowrd"
-                                                placeholder="Enter CVV" maxlength="3" inputmode="numeric"
-                                                data-testid="cardCvv" aria-label="cvv-value" autocomplete="cc-csc"
-                                                value="">
+                                            </label>
+                                            <div class="input-box cvv-input">
+                                                <input pattern="\d*" name="cardCvv" pattern="[0-9]*" tabindex="3"
+                                                    id="cardCvv" type="tel" class="text numeric-passowrd"
+                                                    placeholder="Enter CVV" maxlength="3" inputmode="numeric"
+                                                    data-testid="cardCvv" aria-label="cvv-value" autocomplete="cc-csc"
+                                                    value="">
+                                            </div>
+                                            <span class="error-msg" id="cardCvvError" data-testid="">CVV is
+                                                required</span>
                                         </div>
-                                        <span class="error-msg" id="cardCvvError" data-testid="">CVV is required</span>
                                     </div>
-                                </div>
-                            </span>
+                                </span>
 
-                            <!-- Name on the card -->
-                            <div id="nameOnCard" class="form-row"><label id="nameOnCardLabel">Name on Card</label>
-                                <div class="input-box">
-                                    <input name="cardOwnerName" tabindex="4" id="cardOwnerName" type="text" class="text"
-                                        placeholder="Enter name as on card" maxlength="50" autocomplete="cc-name"
-                                        data-testid="cardOwnerName" value="">
+                                <!-- Name on the card -->
+                                <div id="nameOnCard" class="form-row"><label id="nameOnCardLabel">Name on Card</label>
+                                    <div class="input-box">
+                                        <input name="cardOwnerName" tabindex="4" id="cardOwnerName" type="text"
+                                            class="text" placeholder="Enter name as on card" maxlength="50"
+                                            autocomplete="cc-name" data-testid="cardOwnerName" value="">
+                                    </div>
+                                    <span class="error-msg" id="cardOwnerNameError">Name is required</span>
                                 </div>
-                                <span class="error-msg" id="cardOwnerNameError">Name is required</span>
-                            </div>
 
-                            <button type="submit" tabindex="5" class="common-btn" disabled>
-                                <div>
-                                    <!-- <img class="hidden" src="assets/icons/loader.gif" width="25px"> -->
-                                    <span class="" id="proceed">PROCEED</span>
-                                </div>
-                            </button>
+                                <button type="submit" tabindex="5" class="common-btn" disabled>
+                                    <div>
+                                        <!-- <img class="hidden" src="assets/icons/loader.gif" width="25px"> -->
+                                        <span class="" id="proceed">PROCEED</span>
+                                    </div>
+                                </button>
 
-                        </form>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="ecomm">
+                        <p class="ecomm__text" id="ecomm__text">Please ensure your card is enabled for online
+                            transactions.
+                        </p>
+                        <p class="ecomm__link" data-testid="learnMore" id="learnmore">Learn more</p>
                     </div>
                 </div>
 
-                <div class="ecomm">
-                    <p class="ecomm__text" id="ecomm__text">Please ensure your card is enabled for online transactions.
-                    </p>
-                    <p class="ecomm__link" data-testid="learnMore" id="learnmore">Learn more</p>
-                </div>
+                <p class="consent_stattment d-flex">
+                    <input type="checkbox" name="accept" id="accept">
+                    <span>I consent to the processing of my <a href="#">data</a> by <a href="#">PayU Group</a> their
+                        Business Partners
+                        and their service providers for curating and
+                        offering products and services that may be of use to me
+                    </span>
+                </p>
             </div>
+        </div>
+        <div class="footer_container">
+            <div class="privecy_policy_container d-flex justify-between align-items-center">
+                <div class="footer_left d-flex">
+                    <img src="assets/icons/payu.svg" alt="payu">
+                    <p>By proceeding, you agree to your data being processed per
+                         PayU’s <a href="#">Privacy Policy</a> | <a href="#">Edit your Preferences</a></p>
+                </div>
+                <div class="footer_right">
+                    <ul class="d-flex">
+                        <li><img src="assets/icons/norton.svg" alt="narton" ></li>
+                        <li><img src="assets/icons/visa-logo.svg" alt="visa logo" ></li>
+                        <li><img src="assets/icons/mastercard-logo.svg" alt="mastercard" ></li>
+                        <li><img src="assets/icons/rupay.svg" alt="rupay" ></li>
+                        <li><img src="assets/icons/safekey.svg" alt="safekey" ></li>
+                        <li><img src="assets/icons/pci.svg" alt="pci" ></li>
+                    </ul>
+                </div>
+    
+            </div>
+            <p class="mobile_consent_stattment d-flex">
+                <input type="checkbox" name="accept" id="accept">
+                <span>I consent to the processing of my <a href="#">data</a> by <a href="#">PayU Group</a> their
+                    Business Partners
+                    and their service providers for curating and
+                    offering products and services that may be of use to me
+                </span>
+            </p>
         </div>
     </div>
 
